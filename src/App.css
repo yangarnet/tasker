@@ -1,0 +1,52 @@
+.container {
+    display: block;
+    width: 40%;
+    margin: auto;
+    padding-top: 3%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    overflow: hidden;
+    padding: 20px 0;
+    border-bottom: .07em solid #e6e6e6;
+    display: block;
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.task-creator,
+.task-description {
+    color: #008fb4;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+
+.task-creator:hover,
+.task-description:hover {
+    border-bottom: 2px solid #008fb4;
+    padding-bottom: 5px;
+}
+
+.task-status {
+    background: none;
+    border: 0px;
+    color: #888;
+    font-size: 15px;
+    width: 60px;
+    margin: 1em;
+    font-family: Lato, sans-serif;
+    cursor: pointer;
+}
+
+.active-url {
+    margin-top: 5%;
+    font-size: 20px;
+}
