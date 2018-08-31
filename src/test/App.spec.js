@@ -4,7 +4,7 @@ import { assert, expect } from "chai";
 import App from "../App";
 import TaskItemContainer from "../features/tasks/TaskItemContainer";
 import TaskItemComponent from "../features/tasks/TaskItemComponent";
-import feeds from "./mock.feeds.json";
+import feeds from "../shared-test-data/mock.feeds.json";
 
 describe("The App", () => {
     it("should render the app properly without crash", () => {

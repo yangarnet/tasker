@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import FeedStragtegy from "./feed-strategy/FeedStrategy";
+import StrategySingleton from "./feed-strategy/StrategySingleton";
 import JSONFeeds from "./feed-strategy/json/JsonFeeds";
 
 import "./App.css";
@@ -13,17 +13,16 @@ class App extends Component {
             feedType: "json",
             feeds: {}
         };
-        this.feedStragtegy = new FeedStragtegy("");
+        this.feedStragtegy = StrategySingleton.getIntance();
         this.onUpdateUrl = this.onUpdateUrl.bind(this);
     }
 
     chooseFeedType() {
-        const handler = [
-            {
-                json: JSONFeeds
-            }
-        ];
-        this.feedStragtegy.setFeedSource(new handler[this.state.feedType]());
+        const handler = {
+            "json": JSONFeeds
+        };
+        const selectedHandler = handler[this.state.feedType];
+        this.feedStragtegy.setFeedSource(new selectedHandler());
     }
 
     componentDidMount() {
@@ -40,11 +39,12 @@ class App extends Component {
     }
 
     render() {
+        const {feeds} = this.state;
         return (
             <div className="container">
                 <TaskItemContainer
                     onUpdateUrl={this.onUpdateUrl}
-                    feeds={this.state.feeds}
+                    feeds={feeds}
                 />
                 <div className="active-url">
                     <span>{this.state.activeUrl}</span>

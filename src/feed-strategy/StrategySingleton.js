@@ -1,13 +1,20 @@
-// import FeedStragtegy from "./FeedStrategy";
+import FeedStragtegy from "./FeedStrategy";
 
-// const StrategySingleton = (function() {
-//     let instance;
+const StrategySingleton = (function() {
+    let instance;
 
-//     const createInstance = () => {
-//         instance = new FeedStragtegy('')
-//     };
+    const createInstance = () => {
+        return new FeedStragtegy('');
+    };
 
-//     return
-// })();
+    return {
+        getIntance: function() {
+            if (!instance) {
+                return createInstance();
+            }
+            return instance;
+        }
+    }
+})();
 
-// export default StrategySingleton;
+export default StrategySingleton;

@@ -3,11 +3,11 @@ function FeedStragtegy(feedSource) {
 }
 
 FeedStragtegy.prototype = {
-    setFeedSource: feedSource => {
+    setFeedSource: function(feedSource) {
         this.feedSource = feedSource;
     },
-    getFeeds: () => {
-        this.feedSource.getFeeds();
+    getFeeds: function() {
+        return this.feedSource.getFeeds();
     }
 };
 
