@@ -1,6 +1,6 @@
 ## A React demo app
 
-This simple React application was created to create task list  and display to user
+This simple React application was created to stream task list and display to user
 
 ### get the code
 
